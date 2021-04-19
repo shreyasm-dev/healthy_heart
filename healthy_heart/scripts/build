@@ -1,0 +1,4 @@
+#/bin/bash
+
+flutter build web
+cp -R build/web/* ../server/public/app
