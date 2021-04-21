@@ -80,7 +80,7 @@ class _RemindersPageState extends State<RemindersPage> {
               },
               child: Container(
                 padding: EdgeInsets.all(10),
-                child: Text('ADD REMINDER'),
+                child: Text('ADD EXERCISE REMINDER'),
               ),
             ),
           ),
@@ -91,14 +91,14 @@ class _RemindersPageState extends State<RemindersPage> {
             ),
             child: ListView(
               children: [
-                for (final Map<String, String> reminder in reminderList)
-                  Reminder(reminder, widget.deleteCallback, setState),
-                if (reminderList.length == 0) Text(
-                  'No reminders yet',
+                Text(
+                  'Click the "ADD EXERCISE REMINDER" to schedule a new SMS reminder',
                   style: TextStyle(
                     color: Colors.grey,
                   ),
                 ),
+                for (final Map<String, String> reminder in reminderList)
+                  Reminder(reminder, widget.deleteCallback, setState),
               ],
             ),
           ),
@@ -195,7 +195,7 @@ class _NewReminderDialogState extends State<NewReminderDialog> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: widget.mainColor,
-        title: Text('New Excercise Reminder'),
+        title: Text('New Exercise Reminder'),
       ),
       body: Scrollbar(
         radius: Radius.circular(100),

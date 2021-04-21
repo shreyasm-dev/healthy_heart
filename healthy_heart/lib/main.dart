@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthy_heart/aboutpage.dart';
 import 'package:healthy_heart/reminderspage.dart';
 import 'package:healthy_heart/heartratepage.dart';
 import 'package:healthy_heart/infopage.dart';
@@ -61,11 +62,12 @@ class _AppState extends State<App> {
       ),
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
+                Tab(icon: Icon(Icons.favorite_border_rounded)),
                 Tab(icon: Icon(Icons.alarm_rounded)),
                 Tab(icon: Icon(Icons.bar_chart_rounded)),
                 Tab(icon: Icon(Icons.info_outline_rounded)),
@@ -96,6 +98,7 @@ class _AppState extends State<App> {
           ),
           body: TabBarView(
             children: [
+              AboutPage(),
               RemindersPage(
                 MaterialColor(0xffea4af0, colors),
                 (String name, String number, int hours, int mins, bool pm, List<bool> days) {
